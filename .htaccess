@@ -1,0 +1,8 @@
+RewriteEngine On
+
+# If request is for an existing file or directory, serve it directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Otherwise, route all requests to index.php
+RewriteRule ^ restapi.php [QSA,L]
